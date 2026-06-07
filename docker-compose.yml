@@ -1,0 +1,12 @@
+services:
+  ssh-portfolio:
+    image: alpine:latest
+    container_name: ssh-portfolio
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./ssh-portfolio:/app/ssh-portfolio
+      - ./assets:/app/assets
+    ports:
+      - "1367:1367"
+    command: ["/app/ssh-portfolio"]
